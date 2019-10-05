@@ -36,14 +36,14 @@ class Api
                 if(self::isSetMethod($path)) {
                     new MyClassApi($path[2]);
                 } else {
-                    self::showError(CodeError::NOT_FOUND_METHOD);
+                    self::showError(CodeError::EMPTY_METHOD);
                 }
             break;
             case "chatdesk":
                 if(self::isSetMethod($path)) {
                     new ChatDeskApi($path[2]);
                 } else {
-                    self::showError(CodeError::NOT_FOUND_METHOD);
+                    self::showError(CodeError::EMPTY_METHOD);
                 }
             break;
             default:
@@ -62,7 +62,7 @@ class Api
 
     public static function showError($code)
     {
-        header('Content-Type', 'application/json');
+        header('Content-Type: application/json');
         switch ($code) {
             case CodeError::NOT_INIT_APP:
                 echo json_encode(['error' => ['code' => CodeError::NOT_INIT_APP, 'description' => 'Не иницилизированно ядро']], JSON_UNESCAPED_UNICODE);
@@ -76,8 +76,11 @@ class Api
             case CodeError::NOT_FOUND_API_KEY_SERVICE:
                 echo json_encode(['error' => ['code' => CodeError::NOT_FOUND_API_KEY_SERVICE, 'description' => 'Не найден api ключ сервиса, проверте настройки приложения']], JSON_UNESCAPED_UNICODE);
             break;
+            case CodeError::EMPTY_METHOD:
+                echo json_encode(['error' => ['code' => CodeError::EMPTY_METHOD, 'description' => 'Не указан метод в запросе']], JSON_UNESCAPED_UNICODE);
+            break;
             case CodeError::NOT_FOUND_METHOD:
-                echo json_encode(['error' => ['code' => CodeError::NOT_FOUND_METHOD, 'description' => 'Не указан метод в запросе']], JSON_UNESCAPED_UNICODE);
+                echo json_encode(['error' => ['code' => CodeError::NOT_FOUND_METHOD, 'description' => 'Не верно указан метод']], JSON_UNESCAPED_UNICODE);
             break;
         }
     }
