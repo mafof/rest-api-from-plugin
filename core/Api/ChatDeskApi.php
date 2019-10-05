@@ -38,6 +38,10 @@ class ChatDeskApi extends BaseApi
                 }
                 echo json_encode(['status' => 'OK'], JSON_UNESCAPED_UNICODE);
             break;
+            case "getclients":
+                $clientModel = new ClientModel(true);
+                echo json_encode($clientModel->getClients());
+            break;
             default:
                 Api::showError(CodeError::NOT_FOUND_METHOD);
             break;

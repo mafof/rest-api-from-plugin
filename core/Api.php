@@ -21,7 +21,7 @@ class Api
                 if(self::isSetService($path)) {
                     self::checkPathApi($path);
                 } else {
-                    echo json_encode(['description' => 'Сервис оболочка для других сервисов, дающая нужные методы'], JSON_UNESCAPED_UNICODE);
+                    echo json_encode(['description' => 'Сервис оболочка других REST API сервисов, дающая доступ только к нужным методам'], JSON_UNESCAPED_UNICODE);
                 }
             break;
             default:

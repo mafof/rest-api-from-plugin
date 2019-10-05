@@ -20,4 +20,8 @@ class ClientModel extends DB
             $this->sendSql("INSERT INTO `clients`(`client_id`, `dialog_id`, `phone`) VALUES (:user_id, :dialog_id, :phone)", ['dialog_id' => $dialog_id, 'phone' => $phone, 'user_id' => $user_id]);
         }
     }
+
+    public function getClients() {
+        return $this->sendSqlAndGetData("SELECT `client_id`, `dialog_id`, `phone` FROM `clients`");
+    }
 }
