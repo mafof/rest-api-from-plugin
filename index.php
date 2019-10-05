@@ -7,13 +7,13 @@ require_once __DIR__.'/vendor/autoload.php';
 
 // Проверяем как запущен скрипт =>
 $path = [];
-if(!defined('IS_CRON')) {
+if(!defined('IS_CRON')) { // Если не через крон
     // Получаем разделенный путь =>
     if(isset($_SERVER['PATH_INFO'])) {
         $path = explode('/', $_SERVER['PATH_INFO']);
         array_shift($path);
     }
-} else {
+} else { // Через крон
     $path = ['api', 'chatdesk', 'updatedata'];
 }
 

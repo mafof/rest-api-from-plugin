@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3c1201a-d907-43cb-bf1f-d27537f0f9ee" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Api/ChatDeskApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Api/ChatDeskApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/ClientModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/ClientModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,29 +15,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatDeskApi.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/Api/ChatDeskApi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="28" />
-              <folding>
-                <element signature="e#28#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/ClientModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -69,11 +44,11 @@
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/core/DB.php" />
         <option value="$PROJECT_DIR$/chrome-plugin.sql" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/cron.php" />
         <option value="$PROJECT_DIR$/core/Api.php" />
         <option value="$PROJECT_DIR$/core/Api/ChatDeskApi.php" />
         <option value="$PROJECT_DIR$/core/ClientModel.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -114,17 +89,6 @@
             <path>
               <item name="plugin-chrome" type="b2602c69:ProjectViewProjectNode" />
               <item name="plugin-chrome" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="plugin-chrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plugin-chrome" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="plugin-chrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="plugin-chrome" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -173,16 +137,15 @@
       <option name="presentableId" value="Default" />
       <updated>1570212170163</updated>
       <workItem from="1570212171707" duration="3035000" />
-      <workItem from="1570277812175" duration="14890000" />
+      <workItem from="1570277812175" duration="16083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17925000" />
+    <option name="totallyTimeSpent" value="19118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -351,13 +314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/Api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -368,20 +324,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/ClientModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/Api/ChatDeskApi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="196">
+          <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
           <folding>
             <element signature="e#28#41#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/ClientModel.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
+        <state relative-caret-position="255">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
     </entry>
