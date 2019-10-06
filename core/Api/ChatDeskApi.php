@@ -42,6 +42,25 @@ class ChatDeskApi extends BaseApi
                 $clientModel = new ClientModel(true);
                 echo json_encode($clientModel->getClients());
             break;
+            case "getclient":
+                header('Content-Type: application/json');
+                $arrQuery = [];
+                parse_str($_SERVER['QUERY_STRING'], $arrQuery);
+
+                if(empty($arrQuery['phone'])) {
+                    Api::showError(CodeError::NOT_FOUND_PARAMS);
+                    die();
+                }
+                $clientModel = new ClientModel(true);
+                $phones = explode(',', $arrQuery['phone']);
+
+                $arrResult = [];
+                foreach ($phones as $phone) {
+                    $arrResult = array_merge($arrResult, $clientModel->getClientFilterPhone($phone));
+                }
+
+                echo json_encode($arrResult, JSON_UNESCAPED_UNICODE);
+            break;
             default:
                 Api::showError(CodeError::NOT_FOUND_METHOD);
             break;

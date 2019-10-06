@@ -24,4 +24,8 @@ class ClientModel extends DB
     public function getClients() {
         return $this->sendSqlAndGetData("SELECT `client_id`, `dialog_id`, `phone` FROM `clients`");
     }
+
+    public function getClientFilterPhone($phones) {
+        return $this->sendSqlAndGetData("SELECT `client_id`, `dialog_id`, `phone` FROM `clients` WHERE `phone` IN (:phones)", ['phones' => $phones]);
+    }
 }

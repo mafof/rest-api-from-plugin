@@ -9,4 +9,5 @@ interface CodeError
     const NOT_FOUND_API_KEY_SERVICE = 3;
     const EMPTY_METHOD = 4;
     const NOT_FOUND_METHOD = 5;
+    const NOT_FOUND_PARAMS = 6;
 }

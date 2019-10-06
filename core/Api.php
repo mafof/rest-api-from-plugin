@@ -82,6 +82,9 @@ class Api
             case CodeError::NOT_FOUND_METHOD:
                 echo json_encode(['error' => ['code' => CodeError::NOT_FOUND_METHOD, 'description' => 'Не верно указан метод']], JSON_UNESCAPED_UNICODE);
             break;
+            case CodeError::NOT_FOUND_PARAMS:
+                echo json_encode(['error' => ['code' => CodeError::NOT_FOUND_PARAMS, 'description' => 'Не указаны необходимые параметры']], JSON_UNESCAPED_UNICODE);
+            break;
         }
     }
 }
