@@ -11,6 +11,7 @@ class MyClassApi extends BaseApi
     public function __construct($method)
     {
         parent::checkApiKeyService('my_class');
+        parent::setHeaders();
         self::checkMethod($method);
     }
 
@@ -25,7 +26,6 @@ class MyClassApi extends BaseApi
 
     private function getToken()
     {
-        parent::setHeaders();
         $client = new Client();
         try {
             $res = $client->request('POST', "https://api.moyklass.com/v1/company/auth/getToken", [

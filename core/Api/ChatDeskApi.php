@@ -13,6 +13,7 @@ class ChatDeskApi extends BaseApi
     public function __construct($method)
     {
         parent::checkApiKeyService('chat2desk');
+        parent::setHeaders();
         $this->checkMethod($method);
     }
 
@@ -26,6 +27,7 @@ class ChatDeskApi extends BaseApi
                 $listDialogs = json_decode(json_encode($listDialogs), true);
 
                 $clientModel = new ClientModel(true);
+                $clientModel->clearAllClients();
                 $_array = array_column($listClients['data'], 'id');
                 foreach($listDialogs['data'] as $value) {
                     $index = array_search($value['last_message']['client_id'], $_array);
@@ -33,9 +35,12 @@ class ChatDeskApi extends BaseApi
                         $userId = $value['last_message']['client_id'];
                         $dialogId = $value['last_message']['dialog_id'];
                         $phone = $listClients['data'][$index]['client_phone'];
-                        $clientModel->updateClient($userId, $dialogId, $phone);
+                        $messenger = $value['last_message']['transport'];
+                        $clientModel->updateClient($userId, $dialogId, $phone, $messenger);
                     }
                 }
+
+
                 echo json_encode(['status' => 'OK'], JSON_UNESCAPED_UNICODE);
             break;
             case "getclients":
@@ -43,7 +48,6 @@ class ChatDeskApi extends BaseApi
                 echo json_encode($clientModel->getClients());
             break;
             case "getclient":
-                header('Content-Type: application/json');
                 $arrQuery = [];
                 parse_str($_SERVER['QUERY_STRING'], $arrQuery);
 
@@ -53,6 +57,7 @@ class ChatDeskApi extends BaseApi
                 }
                 $clientModel = new ClientModel(true);
                 $phones = explode(',', $arrQuery['phone']);
+                $phones = array_unique($phones);
 
                 $arrResult = [];
                 foreach ($phones as $phone) {
@@ -69,7 +74,6 @@ class ChatDeskApi extends BaseApi
 
     private function getClients() {
         try {
-            parent::setHeaders();
             $client = new Client();
             $response = $client->request('GET', 'https://api.chat2desk.com/v1/clients', [
                 'headers' => [
@@ -87,7 +91,6 @@ class ChatDeskApi extends BaseApi
 
     private function getDialogs() {
         try {
-            parent::setHeaders();
             $client = new Client();
             $response = $client->request('GET', 'https://api.chat2desk.com/v1/dialogs', [
                 'headers' => [
