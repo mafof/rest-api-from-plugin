@@ -27,7 +27,8 @@ CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
   `client_id` int(11) DEFAULT NULL,
   `dialog_id` int(11) DEFAULT NULL,
-  `phone` text NOT NULL
+  `phone` text NOT NULL,
+  `messenger` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
